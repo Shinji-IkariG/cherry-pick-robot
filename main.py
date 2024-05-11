@@ -248,7 +248,7 @@ def add_repo_upstream(repo):
         raise
     try:
         # git.remote('add', remote_name, remote_url)
-        git.fetch(remote_name, 'master')
+        git.fetch(remote_name, 'snapchat-hotfix')
     except Exception as e:
         print(">>> Fail to add remote, cause: {}".format(e))
         raise
