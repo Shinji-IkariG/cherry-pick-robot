@@ -102,7 +102,7 @@ def add_remote_url(repo):
     try:
         remote_name = repo.owner.login
         git.remote("add", remote_name, remote_url)
-        git.fetch(remote_name, 'snapchat-hotfix')
+        git.fetch(remote_name)
     except Exception as e:
         print(">>> Fail to get remote_name, cause{}".format(str(e)))
 
@@ -117,7 +117,7 @@ def apply_patch(pr, baseBranch, branch, comm_ci):
     git.config("--local", "user.name", cur_author.name)
     git.config("--local", "user.email", cur_author.email)
     git.clean("-f")
-    git.fetch("origin" "snapchat-hotfix")
+    git.fetch("origin")
     git.checkout("-b", branch, "origin/{}".format(baseBranch))
     submodule_path = os.environ["INPUT_SUBMODULE_PATH"]
     if submodule_path:
