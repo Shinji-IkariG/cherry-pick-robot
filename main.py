@@ -154,7 +154,7 @@ def generate_latest_100_commits(repo):
     # commits = []
     global latest_100_commits
     latest_100_commits = []
-    for i, ci in enumerate(repo.get_commits()):
+    for i, ci in enumerate(repo.get_commits(snapchat-hotfix)):
         if i > 100:
             break
         commit = Commit(repo.get_commit(ci.sha))
